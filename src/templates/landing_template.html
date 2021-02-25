@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University of Sydney Pathology slides</title>
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     <style>
+        body {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        main {
+            flex: 1 0 auto;
+        }
+        .spacer{
+            height: 20vh;
+            /* border: 1px red solid */
+        }
+     </style>
+
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper grey darken-2" >
+          <a href="../../" class="brand-logo right" style="margin-right: 10px">Foundations of Medicine</a>
+          <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <li><a href="../../">Home</a></li>
+            <li><a href="../">Basic Clinical Sciences</a></li>
+            <li><a href="../../clinicalmedicine/">Clinical Medicine</a></li>
+            <li><a href="../../about">About</a></li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+        <h1>USYD Pathology slides</h1>
+    </div>
+    <div class="container">
+        <p>
+            The following is a repository of the University of Sydney Pathology slides. These have been hosted here on behalf of the University of Sydney. 
+            The sole purpose of this site is to provide a repository for medical and science students in the University's MD and BSc/BMedSci courses 
+            to access these slides from home and to enable remote learning.
+            <br>
+        </p>
+    </div>
+    <div class="container">
+        <h5>Slides</h5>
+        <table class="highlight responsive-table">
+            <thead>
+              <tr>
+                  <th>Slide ID</th>
+                  <th>Slide name</th>
+                  <th>Link</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+                {% for i in slide %}
+                <tr>
+                    <td>{{i['slide_ID']}}</td>
+                    <td>{{i['slide_name']}}</td>
+                    <td><a href="./{{i['slide_ID']}}">Open slide</a></td>
+                </tr>
+
+            </tbody>
+          </table>
+    </div>
+    <div class="spacer">
+
+    </div>
+    <div class="container">
+        <p> <b>Disclaimer: </b>Use these resources at your own risk. We, the authors and contributors take no responsibility for any misinformation provided within this website and are not liable for any damages caused as a result of the use of these resources. By using this website, you take full responsibility of any repercussions
+            which may result from the use of these resources.
+        </p>
+
+    </div>
+
+</body>
+<footer class="page-footer grey darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">University of Sydney Pathology Slide list</h5>
+          <p class="grey-text text-lighten-4"> Pathology slides © 2021 University of Sydney. Slides were provided from Sanaz Maleki from the University of Sydney Pathology department. <br> Website built and maintained by Weber Liu.
+        </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Other useful resources</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="../../clinicalmedicine/OSCE/">OSCE bank</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
